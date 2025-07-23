@@ -15,79 +15,74 @@ const translations = {
     basic: "Basic",
     pro: "Pro",
     enterprise: "Enterprise",
-    contactUs: "Contact Us",
+    contactUs: "Contact Us"
   },
   fr: {
     features: "Fonctionnalités",
     howItWorks: "Comment ça marche",
     pricing: "Tarification",
-    heroTitle: "Bienvenue sur notre produit",
-    heroDesc: "Des solutions de qualité, fiables et abordables pour vous.",
+    heroTitle: "Bienvenue à notre produit",
+    heroDesc: "Des solutions de haute qualité, fiables et abordables pour vous.",
     submitBtn: "Commencer",
     feature1Title: "Livraison rapide",
     feature1Desc: "Recevez votre produit rapidement grâce à notre logistique optimisée.",
     feature2Title: "Support fiable",
     feature2Desc: "Assistance 24/7 pour tous vos besoins.",
     feature3Title: "Assurance qualité",
-    feature3Desc: "Chaque produit est testé pour répondre aux normes élevées.",
+    feature3Desc: "Chaque produit est vérifié pour répondre à des normes élevées.",
     basic: "Basique",
     pro: "Pro",
     enterprise: "Entreprise",
-    contactUs: "Contactez-nous",
+    contactUs: "Contactez-nous"
   },
   es: {
     features: "Características",
     howItWorks: "Cómo funciona",
     pricing: "Precios",
     heroTitle: "Bienvenido a nuestro producto",
-    heroDesc: "Soluciones de alta calidad, confiables y asequibles hechas para ti.",
-    submitBtn: "Empezar",
+    heroDesc: "Soluciones confiables, asequibles y de alta calidad para ti.",
+    submitBtn: "Comenzar",
     feature1Title: "Entrega rápida",
-    feature1Desc: "Recibe tu producto rápidamente con nuestro sistema logístico.",
+    feature1Desc: "Recibe tu producto rápidamente con logística optimizada.",
     feature2Title: "Soporte confiable",
-    feature2Desc: "Ofrecemos atención al cliente 24/7 para ayudarte siempre.",
+    feature2Desc: "Atención al cliente 24/7 para ayudarte siempre.",
     feature3Title: "Garantía de calidad",
-    feature3Desc: "Cada producto está probado y verificado para cumplir con estándares altos.",
+    feature3Desc: "Probado y verificado con los más altos estándares.",
     basic: "Básico",
     pro: "Pro",
-    enterprise: "Empresa",
-    contactUs: "Contáctenos",
+    enterprise: "Empresarial",
+    contactUs: "Contáctanos"
   },
   ar: {
     features: "الميزات",
-    howItWorks: "كيف تعمل",
+    howItWorks: "كيف يعمل",
     pricing: "الأسعار",
     heroTitle: "مرحبًا بكم في منتجنا",
-    heroDesc: "حلول عالية الجودة وموثوقة وبأسعار معقولة صممت من أجلك.",
+    heroDesc: "حلول عالية الجودة وموثوقة وبأسعار معقولة مصممة لك.",
     submitBtn: "ابدأ الآن",
     feature1Title: "توصيل سريع",
-    feature1Desc: "احصل على منتجك بسرعة من خلال نظامنا اللوجستي المحسن.",
+    feature1Desc: "احصل على منتجك بسرعة من خلال نظام لوجستي فعال.",
     feature2Title: "دعم موثوق",
-    feature2Desc: "نقدم دعمًا على مدار الساعة لتلبية جميع احتياجاتك.",
+    feature2Desc: "ندعمك على مدار الساعة في كل ما تحتاجه.",
     feature3Title: "ضمان الجودة",
-    feature3Desc: "يتم اختبار كل منتج والتحقق منه لتلبية أعلى المعايير.",
+    feature3Desc: "نختبر كل منتج ليتوافق مع أعلى المعايير.",
     basic: "أساسي",
-    pro: "احترافي",
+    pro: "محترف",
     enterprise: "مؤسسة",
-    contactUs: "اتصل بنا",
-  },
+    contactUs: "اتصل بنا"
+  }
 };
 
-const languageSelector = document.getElementById("language");
+document.getElementById("language").addEventListener("change", function () {
+  const lang = this.value;
+  const keys = document.querySelectorAll("[data-key]");
 
-function updateLanguage(lang) {
-  const texts = document.querySelectorAll("[data-key]");
-  texts.forEach((element) => {
-    const key = element.getAttribute("data-key");
+  keys.forEach((el) => {
+    const key = el.getAttribute("data-key");
     if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
+      el.textContent = translations[lang][key];
     }
   });
-}
 
-languageSelector.addEventListener("change", (e) => {
-  updateLanguage(e.target.value);
+  document.documentElement.setAttribute("lang", lang);
 });
-
-// Default language on load
-updateLanguage("en");
