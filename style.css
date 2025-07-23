@@ -1,41 +1,198 @@
-// Language translations
-const translations = {
-  en: {
-    welcome: "Welcome to Our Product",
-    tagline: "High-quality, reliable, and affordable solutions made for you.",
-    getStarted: "Get Started",
-    featuresTitle: "Features",
-    feature1: "Fast Delivery",
-    feature1Desc: "Get your product quickly with our optimized logistics system.",
-    feature2: "Reliable Support",
-    feature2Desc: "We offer 24/7 customer support to assist with all your needs.",
-    feature3: "Quality Assurance",
-    feature3Desc: "Each product is tested and verified to meet high standards.",
-    howItWorks: "How It Works",
-    pricingTitle: "Pricing",
-    basic: "Basic",
-    pro: "Pro",
-    enterprise: "Enterprise",
-    contact: "Contact Us",
-    footer: "All rights reserved.",
-    emailPlaceholder: "Enter your email"
-  },
-  fr: {
-    welcome: "Bienvenue à notre produit",
-    tagline: "Des solutions de haute qualité, fiables et abordables pour vous.",
-    getStarted: "Commencer",
-    featuresTitle: "Caractéristiques",
-    feature1: "Livraison rapide",
-    feature1Desc: "Recevez votre produit rapidement grâce à notre logistique optimisée.",
-    feature2: "Support fiable",
-    feature2Desc: "Nous offrons un support client 24/7 pour tous vos besoins.",
-    feature3: "Assurance qualité",
-    feature3Desc: "Chaque produit est testé pour répondre à des normes élevées.",
-    howItWorks: "Comment ça marche",
-    pricingTitle: "Tarification",
-    basic: "Basique",
-    pro: "Pro",
-    enterprise: "Entreprise",
-    contact: "Contactez-nous",
-    footer: "Tous droits réservés.",
-    emailPlaceholder: "Entrez
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #ddd;
+}
+
+#header-img {
+  height: 50px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.lang-switcher {
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+#language-select {
+  padding: 0.3rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+main {
+  padding: 2rem;
+}
+
+#hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #eef6ff;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#email {
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#submit {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+  background-color: #0056b3;
+}
+
+#features {
+  margin-bottom: 3rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+#how-it-works {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.video-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+#pricing {
+  text-align: center;
+}
+
+.pricing-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.option {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 200px;
+}
+
+.option h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .pricing-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-list {
+    gap: 1.5rem;
+  }
+}
