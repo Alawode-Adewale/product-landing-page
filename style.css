@@ -1,0 +1,236 @@
+/* Reset default margins and paddings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  padding-top: 80px;
+  transition: direction 0.3s ease;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Logo */
+#header-img {
+  max-height: 50px;
+}
+
+/* Nav Bar */
+#nav-bar {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  margin-left: 1em;
+}
+
+select {
+  padding: 0.3em 0.5em;
+}
+
+/* Hero Section */
+#hero {
+  padding: 4em 2em;
+  background: #e9ecef;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+#hero p {
+  margin-bottom: 1em;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+#email {
+  padding: 0.5em;
+  font-size: 1em;
+  width: 250px;
+  max-width: 100%;
+}
+
+#submit {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#submit:hover {
+  background: #0056b3;
+}
+
+/* Features Section */
+#features {
+  padding: 4em 2em;
+  background: white;
+  text-align: center;
+}
+
+.feature-list {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.feature {
+  flex: 1 1 200px;
+  max-width: 300px;
+  background: #f1f1f1;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+/* How It Works Section */
+#how-it-works {
+  padding: 4em 2em;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Pricing Section */
+#pricing {
+  padding: 4em 2em;
+  background: white;
+  text-align: center;
+}
+
+.pricing-options {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.option {
+  background: #f1f1f1;
+  padding: 1.5em;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2em;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* RTL Support */
+body[dir="rtl"] {
+  direction: rtl;
+}
+
+body[dir="rtl"] #nav-bar {
+  text-align: left;
+}
+
+body[dir="rtl"] .nav-list {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] #form {
+  flex-direction: row-reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2em;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .feature-list,
+  .pricing-options {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  #form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #email {
+    width: 100%;
+  }
+}
