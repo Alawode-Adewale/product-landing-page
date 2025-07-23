@@ -13,7 +13,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -41,14 +42,15 @@ header {
 }
 
 .lang-switcher {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 20px;
+  z-index: 1001;
 }
 
 main {
   max-width: 900px;
-  margin: auto;
+  margin: 120px auto 40px auto;
   padding: 20px;
   background: white;
 }
