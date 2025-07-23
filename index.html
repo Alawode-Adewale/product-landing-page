@@ -7,32 +7,32 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Language Switcher -->
   <div class="lang-switcher">
-    <label for="language">🌍</label>
+    <label for="language">🌐 Language:</label>
     <select id="language">
       <option value="en">English</option>
-      <option value="es">Español</option>
-      <option value="fr">Français</option>
       <option value="ar">العربية</option>
     </select>
   </div>
 
+  <!-- Header -->
   <header id="header">
     <img id="header-img" src="https://via.placeholder.com/150x50?text=LOGO" alt="Company Logo" />
-    
     <nav id="nav-bar">
       <ul class="nav-list">
-        <li><a class="nav-link" href="#features" data-lang="features">Features</a></li>
-        <li><a class="nav-link" href="#how-it-works" data-lang="how-it-works">How It Works</a></li>
-        <li><a class="nav-link" href="#pricing" data-lang="pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <main>
     <section id="hero">
-      <h1 data-lang="welcome">Welcome to Our Product</h1>
-      <p data-lang="description">High-quality, reliable, and affordable solutions made for you.</p>
+      <h1>Welcome to Our Product</h1>
+      <p>High-quality, reliable, and affordable solutions made for you.</p>
       <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
         <input
           type="email"
@@ -41,30 +41,32 @@
           placeholder="Enter your email"
           required
         />
-        <input type="submit" id="submit" value="Get Started" data-lang="submit" />
+        <input type="submit" id="submit" value="Get Started" />
       </form>
     </section>
 
+    <!-- Features -->
     <section id="features">
-      <h2 data-lang="features">Features</h2>
+      <h2>Features</h2>
       <div class="feature-list">
         <div class="feature">
-          <h3 data-lang="feature1-title">Fast Delivery</h3>
-          <p data-lang="feature1-desc">Get your product quickly with our optimized logistics system.</p>
+          <h3>Fast Delivery</h3>
+          <p>Get your product quickly with our optimized logistics system.</p>
         </div>
         <div class="feature">
-          <h3 data-lang="feature2-title">Reliable Support</h3>
-          <p data-lang="feature2-desc">We offer 24/7 customer support to assist with all your needs.</p>
+          <h3>Reliable Support</h3>
+          <p>We offer 24/7 customer support to assist with all your needs.</p>
         </div>
         <div class="feature">
-          <h3 data-lang="feature3-title">Quality Assurance</h3>
-          <p data-lang="feature3-desc">Each product is tested and verified to meet high standards.</p>
+          <h3>Quality Assurance</h3>
+          <p>Each product is tested and verified to meet high standards.</p>
         </div>
       </div>
     </section>
 
+    <!-- How It Works -->
     <section id="how-it-works">
-      <h2 data-lang="how-it-works">How It Works</h2>
+      <h2>How It Works</h2>
       <div class="video-container">
         <iframe
           id="video"
@@ -78,127 +80,35 @@
       </div>
     </section>
 
+    <!-- Pricing -->
     <section id="pricing">
-      <h2 data-lang="pricing">Pricing</h2>
+      <h2>Pricing</h2>
       <div class="pricing-options">
         <div class="option">
-          <h3 data-lang="basic">Basic</h3>
+          <h3>Basic</h3>
           <p>$19/month</p>
         </div>
         <div class="option">
-          <h3 data-lang="pro">Pro</h3>
+          <h3>Pro</h3>
           <p>$49/month</p>
         </div>
         <div class="option">
-          <h3 data-lang="enterprise">Enterprise</h3>
-          <p data-lang="contact-us">Contact Us</p>
+          <h3>Enterprise</h3>
+          <p>Contact Us</p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 <span data-lang="company">Your Company</span>. <span data-lang="rights">All rights reserved.</span></p>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
   </footer>
+
+  <!-- Multilingual Support Script -->
+  <script src="script.js"></script>
 
   <!-- FreeCodeCamp Test Suite -->
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
-  <!-- Language Switcher Script -->
-  <script>
-    const translations = {
-      en: {
-        features: "Features",
-        "how-it-works": "How It Works",
-        pricing: "Pricing",
-        welcome: "Welcome to Our Product",
-        description: "High-quality, reliable, and affordable solutions made for you.",
-        submit: "Get Started",
-        "feature1-title": "Fast Delivery",
-        "feature1-desc": "Get your product quickly with our optimized logistics system.",
-        "feature2-title": "Reliable Support",
-        "feature2-desc": "We offer 24/7 customer support to assist with all your needs.",
-        "feature3-title": "Quality Assurance",
-        "feature3-desc": "Each product is tested and verified to meet high standards.",
-        basic: "Basic",
-        pro: "Pro",
-        enterprise: "Enterprise",
-        "contact-us": "Contact Us",
-        company: "Your Company",
-        rights: "All rights reserved."
-      },
-      es: {
-        features: "Características",
-        "how-it-works": "Cómo Funciona",
-        pricing: "Precios",
-        welcome: "Bienvenido a Nuestro Producto",
-        description: "Soluciones de alta calidad, fiables y asequibles hechas para ti.",
-        submit: "Comenzar",
-        "feature1-title": "Entrega Rápida",
-        "feature1-desc": "Recibe tu producto rápidamente con nuestro sistema logístico optimizado.",
-        "feature2-title": "Soporte Confiable",
-        "feature2-desc": "Ofrecemos soporte al cliente 24/7 para todas tus necesidades.",
-        "feature3-title": "Garantía de Calidad",
-        "feature3-desc": "Cada producto es probado y verificado para cumplir con altos estándares.",
-        basic: "Básico",
-        pro: "Pro",
-        enterprise: "Empresa",
-        "contact-us": "Contáctanos",
-        company: "Tu Empresa",
-        rights: "Todos los derechos reservados."
-      },
-      fr: {
-        features: "Fonctionnalités",
-        "how-it-works": "Comment ça marche",
-        pricing: "Tarification",
-        welcome: "Bienvenue sur Notre Produit",
-        description: "Des solutions de haute qualité, fiables et abordables pour vous.",
-        submit: "Commencer",
-        "feature1-title": "Livraison Rapide",
-        "feature1-desc": "Recevez votre produit rapidement grâce à notre logistique optimisée.",
-        "feature2-title": "Support Fiable",
-        "feature2-desc": "Assistance client 24h/24 et 7j/7 pour répondre à tous vos besoins.",
-        "feature3-title": "Assurance Qualité",
-        "feature3-desc": "Chaque produit est testé et vérifié selon des normes strictes.",
-        basic: "Basique",
-        pro: "Pro",
-        enterprise: "Entreprise",
-        "contact-us": "Contactez-nous",
-        company: "Votre Entreprise",
-        rights: "Tous droits réservés."
-      },
-      ar: {
-        features: "الميزات",
-        "how-it-works": "كيف يعمل",
-        pricing: "الأسعار",
-        welcome: "مرحبًا بكم في منتجنا",
-        description: "حلول عالية الجودة وموثوقة وبأسعار معقولة مصممة لك.",
-        submit: "ابدأ الآن",
-        "feature1-title": "توصيل سريع",
-        "feature1-desc": "احصل على منتجك بسرعة باستخدام نظام الخدمات اللوجستية المحسن.",
-        "feature2-title": "دعم موثوق",
-        "feature2-desc": "نقدم دعمًا للعملاء على مدار الساعة طوال أيام الأسبوع.",
-        "feature3-title": "ضمان الجودة",
-        "feature3-desc": "يتم اختبار كل منتج والتحقق منه وفقًا لأعلى المعايير.",
-        basic: "أساسي",
-        pro: "محترف",
-        enterprise: "مؤسسة",
-        "contact-us": "اتصل بنا",
-        company: "شركتك",
-        rights: "جميع الحقوق محفوظة."
-      }
-    };
-
-    const langSelector = document.getElementById("language");
-    langSelector.addEventListener("change", () => {
-      const selectedLang = langSelector.value;
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        const key = el.getAttribute("data-lang");
-        if (translations[selectedLang][key]) {
-          el.textContent = translations[selectedLang][key];
-        }
-      });
-    });
-  </script>
 </body>
 </html>
