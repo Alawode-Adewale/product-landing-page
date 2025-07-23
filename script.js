@@ -1,88 +1,93 @@
-// Basic translations object
 const translations = {
   en: {
-    title: "Welcome to Our Product",
-    description: "High-quality, reliable, and affordable solutions made for you.",
     features: "Features",
-    feature1: "Fast Delivery",
-    feature1Desc: "Get your product quickly with our optimized logistics system.",
-    feature2: "Reliable Support",
-    feature2Desc: "We offer 24/7 customer support to assist with all your needs.",
-    feature3: "Quality Assurance",
-    feature3Desc: "Each product is tested and verified to meet high standards.",
     howItWorks: "How It Works",
     pricing: "Pricing",
+    heroTitle: "Welcome to Our Product",
+    heroDesc: "High-quality, reliable, and affordable solutions made for you.",
+    submitBtn: "Get Started",
+    feature1Title: "Fast Delivery",
+    feature1Desc: "Get your product quickly with our optimized logistics system.",
+    feature2Title: "Reliable Support",
+    feature2Desc: "We offer 24/7 customer support to assist with all your needs.",
+    feature3Title: "Quality Assurance",
+    feature3Desc: "Each product is tested and verified to meet high standards.",
     basic: "Basic",
     pro: "Pro",
     enterprise: "Enterprise",
-    contact: "Contact Us",
-    submit: "Get Started",
-    placeholder: "Enter your email"
+    contactUs: "Contact Us",
+  },
+  fr: {
+    features: "Fonctionnalités",
+    howItWorks: "Comment ça marche",
+    pricing: "Tarification",
+    heroTitle: "Bienvenue sur notre produit",
+    heroDesc: "Des solutions de qualité, fiables et abordables pour vous.",
+    submitBtn: "Commencer",
+    feature1Title: "Livraison rapide",
+    feature1Desc: "Recevez votre produit rapidement grâce à notre logistique optimisée.",
+    feature2Title: "Support fiable",
+    feature2Desc: "Assistance 24/7 pour tous vos besoins.",
+    feature3Title: "Assurance qualité",
+    feature3Desc: "Chaque produit est testé pour répondre aux normes élevées.",
+    basic: "Basique",
+    pro: "Pro",
+    enterprise: "Entreprise",
+    contactUs: "Contactez-nous",
   },
   es: {
-    title: "Bienvenido a Nuestro Producto",
-    description: "Soluciones de alta calidad, confiables y asequibles hechas para ti.",
     features: "Características",
-    feature1: "Entrega Rápida",
-    feature1Desc: "Recibe tu producto rápidamente con nuestro sistema logístico optimizado.",
-    feature2: "Soporte Confiable",
-    feature2Desc: "Ofrecemos soporte al cliente 24/7 para ayudarte en todo momento.",
-    feature3: "Garantía de Calidad",
-    feature3Desc: "Cada producto está probado y verificado con altos estándares.",
-    howItWorks: "Cómo Funciona",
+    howItWorks: "Cómo funciona",
     pricing: "Precios",
+    heroTitle: "Bienvenido a nuestro producto",
+    heroDesc: "Soluciones de alta calidad, confiables y asequibles hechas para ti.",
+    submitBtn: "Empezar",
+    feature1Title: "Entrega rápida",
+    feature1Desc: "Recibe tu producto rápidamente con nuestro sistema logístico.",
+    feature2Title: "Soporte confiable",
+    feature2Desc: "Ofrecemos atención al cliente 24/7 para ayudarte siempre.",
+    feature3Title: "Garantía de calidad",
+    feature3Desc: "Cada producto está probado y verificado para cumplir con estándares altos.",
     basic: "Básico",
     pro: "Pro",
     enterprise: "Empresa",
-    contact: "Contáctanos",
-    submit: "Comenzar",
-    placeholder: "Introduce tu correo electrónico"
-  }
+    contactUs: "Contáctenos",
+  },
+  ar: {
+    features: "الميزات",
+    howItWorks: "كيف تعمل",
+    pricing: "الأسعار",
+    heroTitle: "مرحبًا بكم في منتجنا",
+    heroDesc: "حلول عالية الجودة وموثوقة وبأسعار معقولة صممت من أجلك.",
+    submitBtn: "ابدأ الآن",
+    feature1Title: "توصيل سريع",
+    feature1Desc: "احصل على منتجك بسرعة من خلال نظامنا اللوجستي المحسن.",
+    feature2Title: "دعم موثوق",
+    feature2Desc: "نقدم دعمًا على مدار الساعة لتلبية جميع احتياجاتك.",
+    feature3Title: "ضمان الجودة",
+    feature3Desc: "يتم اختبار كل منتج والتحقق منه لتلبية أعلى المعايير.",
+    basic: "أساسي",
+    pro: "احترافي",
+    enterprise: "مؤسسة",
+    contactUs: "اتصل بنا",
+  },
 };
 
-// DOM elements to translate
-const elements = {
-  title: document.querySelector("#hero h1"),
-  description: document.querySelector("#hero p"),
-  features: document.querySelector("#features h2"),
-  feature1: document.querySelectorAll(".feature h3")[0],
-  feature1Desc: document.querySelectorAll(".feature p")[0],
-  feature2: document.querySelectorAll(".feature h3")[1],
-  feature2Desc: document.querySelectorAll(".feature p")[1],
-  feature3: document.querySelectorAll(".feature h3")[2],
-  feature3Desc: document.querySelectorAll(".feature p")[2],
-  howItWorks: document.querySelector("#how-it-works h2"),
-  pricing: document.querySelector("#pricing h2"),
-  basic: document.querySelectorAll(".option h3")[0],
-  pro: document.querySelectorAll(".option h3")[1],
-  enterprise: document.querySelectorAll(".option h3")[2],
-  contact: document.querySelectorAll(".option p")[2],
-  submit: document.querySelector("#submit"),
-  email: document.querySelector("#email")
-};
+const languageSelector = document.getElementById("language");
 
-// Language switcher
-document.getElementById("language-select").addEventListener("change", (e) => {
-  const lang = e.target.value;
-  const t = translations[lang];
+function updateLanguage(lang) {
+  const texts = document.querySelectorAll("[data-key]");
+  texts.forEach((element) => {
+    const key = element.getAttribute("data-key");
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
+}
 
-  if (t) {
-    elements.title.textContent = t.title;
-    elements.description.textContent = t.description;
-    elements.features.textContent = t.features;
-    elements.feature1.textContent = t.feature1;
-    elements.feature1Desc.textContent = t.feature1Desc;
-    elements.feature2.textContent = t.feature2;
-    elements.feature2Desc.textContent = t.feature2Desc;
-    elements.feature3.textContent = t.feature3;
-    elements.feature3Desc.textContent = t.feature3Desc;
-    elements.howItWorks.textContent = t.howItWorks;
-    elements.pricing.textContent = t.pricing;
-    elements.basic.textContent = t.basic;
-    elements.pro.textContent = t.pro;
-    elements.enterprise.textContent = t.enterprise;
-    elements.contact.textContent = t.contact;
-    elements.submit.value = t.submit;
-    elements.email.placeholder = t.placeholder;
-  }
+languageSelector.addEventListener("change", (e) => {
+  updateLanguage(e.target.value);
 });
+
+// Default language on load
+updateLanguage("en");
