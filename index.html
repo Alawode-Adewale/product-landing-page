@@ -8,65 +8,57 @@
 </head>
 <body>
 
+  <div class="lang-switcher">
+    <label for="language">🌐</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+
   <header id="header">
     <img id="header-img" src="https://via.placeholder.com/150x50?text=LOGO" alt="Company Logo" />
-    
     <nav id="nav-bar">
       <ul class="nav-list">
-        <li><a class="nav-link" href="#features">Features</a></li>
-        <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
-        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#features" data-key="features">Features</a></li>
+        <li><a class="nav-link" href="#how-it-works" data-key="howItWorks">How It Works</a></li>
+        <li><a class="nav-link" href="#pricing" data-key="pricing">Pricing</a></li>
       </ul>
     </nav>
-
-    <!-- Language Switcher -->
-    <div class="lang-switcher">
-      <label for="language-select">🌐</label>
-      <select id="language-select">
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-        <option value="yo">Yorùbá</option>
-      </select>
-    </div>
   </header>
 
   <main>
     <section id="hero">
-      <h1 data-i18n="hero_title">Welcome to Our Product</h1>
-      <p data-i18n="hero_subtitle">High-quality, reliable, and affordable solutions made for you.</p>
+      <h1 data-key="heroTitle">Welcome to Our Product</h1>
+      <p data-key="heroDesc">High-quality, reliable, and affordable solutions made for you.</p>
       <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        />
-        <input type="submit" id="submit" value="Get Started" data-i18n="submit_btn" />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input type="submit" id="submit" value="Get Started" data-key="submitBtn" />
       </form>
     </section>
 
     <section id="features">
-      <h2 data-i18n="features_title">Features</h2>
+      <h2 data-key="features">Features</h2>
       <div class="feature-list">
         <div class="feature">
-          <h3 data-i18n="feature1_title">Fast Delivery</h3>
-          <p data-i18n="feature1_text">Get your product quickly with our optimized logistics system.</p>
+          <h3 data-key="feature1Title">Fast Delivery</h3>
+          <p data-key="feature1Desc">Get your product quickly with our optimized logistics system.</p>
         </div>
         <div class="feature">
-          <h3 data-i18n="feature2_title">Reliable Support</h3>
-          <p data-i18n="feature2_text">We offer 24/7 customer support to assist with all your needs.</p>
+          <h3 data-key="feature2Title">Reliable Support</h3>
+          <p data-key="feature2Desc">We offer 24/7 customer support to assist with all your needs.</p>
         </div>
         <div class="feature">
-          <h3 data-i18n="feature3_title">Quality Assurance</h3>
-          <p data-i18n="feature3_text">Each product is tested and verified to meet high standards.</p>
+          <h3 data-key="feature3Title">Quality Assurance</h3>
+          <p data-key="feature3Desc">Each product is tested and verified to meet high standards.</p>
         </div>
       </div>
     </section>
 
     <section id="how-it-works">
-      <h2 data-i18n="how_title">How It Works</h2>
+      <h2 data-key="howItWorks">How It Works</h2>
       <div class="video-container">
         <iframe
           id="video"
@@ -81,31 +73,30 @@
     </section>
 
     <section id="pricing">
-      <h2 data-i18n="pricing_title">Pricing</h2>
+      <h2 data-key="pricing">Pricing</h2>
       <div class="pricing-options">
         <div class="option">
-          <h3 data-i18n="pricing_basic">Basic</h3>
+          <h3 data-key="basic">Basic</h3>
           <p>$19/month</p>
         </div>
         <div class="option">
-          <h3 data-i18n="pricing_pro">Pro</h3>
+          <h3 data-key="pro">Pro</h3>
           <p>$49/month</p>
         </div>
         <div class="option">
-          <h3 data-i18n="pricing_enterprise">Enterprise</h3>
-          <p data-i18n="contact_us">Contact Us</p>
+          <h3 data-key="enterprise">Enterprise</h3>
+          <p data-key="contactUs">Contact Us</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 <span data-i18n="company_name">Your Company</span>. <span data-i18n="all_rights">All rights reserved.</span></p>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
   </footer>
 
-  <!-- FreeCodeCamp Test Script -->
+  <!-- FCC Testing Script -->
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-  <!-- Your Multilingual Script -->
   <script src="script.js"></script>
 </body>
 </html>
